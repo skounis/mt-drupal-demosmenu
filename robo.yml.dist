@@ -6,7 +6,7 @@ project:
 
 # Site information.
 site:
-  name: Pledge viewers
+  name: Drupal 8 Skeleton
   mail: email@example.com
   profile: minimal
   update: false
