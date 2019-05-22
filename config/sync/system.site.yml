@@ -1,14 +1,14 @@
-uuid: 6d4429ba-6739-4dc0-992f-6f8c961f58a9
+uuid: 2304ac6a-e699-4454-b0a5-b8c27a3d5489
 name: 'Drupal 8 Skeleton'
 mail: email@example.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /user/login
+  front: /node
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en
 default_langcode: en
 _core:
-  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
