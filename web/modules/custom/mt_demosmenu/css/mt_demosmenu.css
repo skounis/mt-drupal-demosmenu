@@ -3,13 +3,8 @@
  *  Add any module related style here
  */
 .mt_demosmenu {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
-  align-items: stretch;
+  padding-bottom: 20px;
 }
-
 .mt_demosmenu__menu {
   display: flex;
   flex-direction: row;
@@ -17,22 +12,34 @@
   justify-content: space-evenly;
   align-items: stretch;
   flex-grow: 1;
-}
-
-ul.mt_demosmenu__menu {
+  -webkit-box-shadow: 0 3px 15px rgba(0,0,0,0.5);
+  box-shadow: 0 3px 15px rgba(0,0,0,0.5);
   margin: 0;
   padding: 0;
   list-style-type: none;
+  background-color: #748ca6;
 }
-
 .mt_demosmenu__menu-item {
   flex-grow: 1;
-  background: purple;
+  border-right: 1px solid #FFFFFF;
 }
-
-.mt_demosmenu__menu-item a {
+.mt_demosmenu__menu-item:last-of-type {
+  border-right: 0;
+}
+.mt_demosmenu__menu-item a,
+.mt_demosmenu__menu-item a:hover,
+.mt_demosmenu__menu-item a:active,
+.mt_demosmenu__menu-item a:focus {
+  font-weight: bold;
+  color: #FFF;
   display: inline-block;
   width: 100%;
   text-align: center;
   padding: 1em;
+}
+.mt_demosmenu__menu-item a:hover,
+.mt_demosmenu__menu-item a:active,
+.mt_demosmenu__menu-item a:focus {
+  background-color: #8da1b6;
+  text-decoration: none;
 }
