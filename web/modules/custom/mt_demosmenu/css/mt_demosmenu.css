@@ -32,10 +32,10 @@
 .mt_demosmenu__menu-item a:focus {
   font-weight: bold;
   color: #FFF;
-  display: inline-block;
-  width: 100%;
+  display: block;
   text-align: center;
   padding: 1em;
+  border-bottom: 0;
 }
 .mt_demosmenu__menu-item a:hover,
 .mt_demosmenu__menu-item a:active,
