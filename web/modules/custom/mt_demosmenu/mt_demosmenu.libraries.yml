@@ -1,0 +1,10 @@
+mt_demosmenu:
+  version: 1.x
+  css:
+    theme:
+      css/mt_demosmenu.css: {}
+  js:
+    js/mt_demosmenu.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings

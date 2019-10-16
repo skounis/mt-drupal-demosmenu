@@ -1,0 +1,13 @@
+mt_demosmenu.settings_menu:
+  title: 'Demos Menu'
+  parent: system.admin_config
+  description: ''
+  route_name: mt_demosmenu.admin_index
+  weight: 0
+
+mt_demosmenu.settings_page:
+  title: 'Menu Links'
+  parent: mt_demosmenu.settings_menu
+  description: 'Configure the link targets.'
+  route_name: mt_demosmenu.settings
+  weight: 1

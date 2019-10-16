@@ -1,0 +1,38 @@
+/*
+ * MT Demos Menu styles
+ *  Add any module related style here
+ */
+.mt_demosmenu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+.mt_demosmenu__menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  flex-grow: 1;
+}
+
+ul.mt_demosmenu__menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.mt_demosmenu__menu-item {
+  flex-grow: 1;
+  background: purple;
+}
+
+.mt_demosmenu__menu-item a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 1em;
+}

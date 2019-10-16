@@ -1,0 +1,117 @@
+<?php
+
+/**
+ * @file
+ * Contains mt_demosmenu.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function mt_demosmenu_help($route_name, RouteMatchInterface $route_match)
+{
+  switch ($route_name) {
+    // Main module help for the mt_demosmenu module.
+    case 'help.page.mt_demosmenu':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Configure the links and their targets .') . '</p>';
+
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function mt_demosmenu_theme()
+{
+  // Theme for mt_demosmenu block.
+  $themes['mt_demosmenu'] = [
+    'template' => 'block--mt_demosmenu',
+    'variables' => [
+      'data' => NULL,
+    ],
+  ];
+
+  return $themes;
+
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function mt_demosmenu_page_attachments(array &$attachments) {
+
+  $config = \Drupal::config('mt_demosmenu.settings');
+
+  // Set data to drupal settings.
+  // $attachments['#attached']['drupalSettings']['mt_demosmenu']['expiration_date'] = $config->get('expiration_date');
+
+  // Attach library.
+  $attachments['#attached']['library'][] = 'mt_demosmenu/mt_demosmenu';
+}
+
+function mt_demosmenu_page_top(array &$page_top) {
+
+//  $page_top['mt_demosmenu'] = [
+//    '#markup' => 'This is again the top.',
+//  ];
+//  return;
+
+  // Create configs array.
+  $config = \Drupal::config('mt_demosmenu.settings');
+  $links = _mt_demosmenu_parse_links($config->get('links'));
+  $vars = [];
+
+  $vars['inject_in_the_body'] = $config->get('inject_in_the_body');
+  $vars['links'] = $links;
+  if ($vars['inject_in_the_body']) {
+
+    // Get template path.
+    $active_theme = \Drupal::service('theme.manager')->getActiveTheme();
+    $template_file = $active_theme->getPath() . '/templates/mt_demosmenu_inject.html.twig';
+
+    // Check if template in the active theme exist.
+    if (!file_exists($template_file)) {
+      $module_path = drupal_get_path('module', 'mt_demosmenu');
+      $template_file = $module_path . '/templates/mt_demosmenu_inject.html.twig';
+    }
+    $is_admin = \Drupal::service('router.admin_context')->isAdminRoute();
+    if (!$is_admin) {
+      // Render twig template.
+      $twig_service = \Drupal::service('twig');
+      $html = $twig_service->loadTemplate($template_file)->render($vars);
+      $page_top['mt_demosmenu_inject'] = [
+        '#type' => 'inline_template',
+        '#children' => $html,
+      ];
+    }
+  }
+}
+
+/**
+ * @param $text
+ *   A multiline text. Each row has caption/target separated with a pipe |
+ *
+ * @return
+ *   An array of Label/Target pairs
+ */
+function _mt_demosmenu_parse_links($text) {
+  if (empty(trim($text))) {
+    return [];
+  }
+  $lines = explode("\n", $text);
+  $links = array_map("_mt_demosmenu_explode_lines", $lines);
+  return $links;
+}
+
+function _mt_demosmenu_explode_lines($value) {
+  $lines = explode("|", $value);
+  $lines = array_map("trim", $lines);
+  return $lines;
+}

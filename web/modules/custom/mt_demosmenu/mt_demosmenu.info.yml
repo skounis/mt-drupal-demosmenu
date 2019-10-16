@@ -1,0 +1,16 @@
+name: Drupalizing Menu
+description: Menu to free and premium themes for drupalizing demos.
+package: More than Themes
+
+type: module
+core: 8.x
+
+version: 8.x-1.0-beta3
+
+configure: mt_demosmenu.settings
+
+dependencies:
+  - datetime:datetime
+  - options:options
+  - field_ui:field_ui
+  - block

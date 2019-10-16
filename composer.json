@@ -13,19 +13,6 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "mtt/minimalplus",
-                "version": "8.0",
-                "type": "drupal-theme",
-                "source": {
-                    "url": "https://github.com/skounis/d8-theme-rnd-minimalplus",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
         }
     ],
     "require": {
@@ -37,7 +24,6 @@
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
         "drush/drush": "^9.0.0",
-        "mtt/minimalplus": "^8.0",
         "nuvoleweb/robo-config": "^0.2.2",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
