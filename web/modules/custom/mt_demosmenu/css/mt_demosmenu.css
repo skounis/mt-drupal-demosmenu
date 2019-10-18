@@ -3,7 +3,10 @@
  *  Add any module related style here
  */
 .mt_demosmenu {
-  padding-bottom: 20px;
+  position: relative;
+  z-index: 50;
+  -webkit-box-shadow: 0 3px 15px rgba(0,0,0,0.5);
+  box-shadow: 0 3px 15px rgba(0,0,0,0.5);
 }
 .mt_demosmenu__menu {
   display: flex;
@@ -12,8 +15,6 @@
   justify-content: space-evenly;
   align-items: stretch;
   flex-grow: 1;
-  -webkit-box-shadow: 0 3px 15px rgba(0,0,0,0.5);
-  box-shadow: 0 3px 15px rgba(0,0,0,0.5);
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -26,10 +27,7 @@
 .mt_demosmenu__menu-item:last-of-type {
   border-right: 0;
 }
-.mt_demosmenu__menu-item a,
-.mt_demosmenu__menu-item a:hover,
-.mt_demosmenu__menu-item a:active,
-.mt_demosmenu__menu-item a:focus {
+.mt_demosmenu__menu-item a {
   font-weight: bold;
   color: #FFF;
   display: block;
@@ -41,5 +39,20 @@
 .mt_demosmenu__menu-item a:active,
 .mt_demosmenu__menu-item a:focus {
   background-color: #8da1b6;
+  color: #FFF;
   text-decoration: none;
+  border-bottom: 0;
+}
+
+/* Logo item specific styling */
+.mt_demosmenu__menu-item--mtt-site {
+  flex-grow: 0;
+}
+.mt_demosmenu__menu-item--mtt-site a {
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.mt_demosmenu__menu-item--mtt-site img {
+  max-height: 40px;
 }

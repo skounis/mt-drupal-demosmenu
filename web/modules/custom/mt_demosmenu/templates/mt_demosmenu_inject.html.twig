@@ -1,5 +1,4 @@
 {% if inject_in_the_body %}
-
   <div class="mt_demosmenu">
     <ul class="mt_demosmenu__menu">
       {% if links|length > 0 %}
@@ -8,10 +7,10 @@
           <li>{{ user.username|e }}</li>
         {% endfor %}
       {% else %}
-        <li class="mt_demosmenu__menu-item mt_demosmenu__menu-item--premium"><a href="https://morethanthemes.com/drupal-themes/premium" target="_blank">Premium themes</a></li>
-        <li class="mt_demosmenu__menu-item mt_demosmenu__menu-item--free"><a href="https://morethanthemes.com/drupal-themes/free" target="_blank">Free themes</a></li>
+        <li class="mt_demosmenu__menu-item mt_demosmenu__menu-item--mtt-site"><a class="px-3 px-md-5" href="https://www.morethanthemes.com/?utm_source=drupalizing-demos&utm_medium=demo-menu&utm_campaign=free-themes" target="_blank"><img src="https://morethanthemes.com/sites/default/files/mtt_themes_logo_linkedin.png" alt="More Than Themes logo"></a></li>
+        <li class="mt_demosmenu__menu-item mt_demosmenu__menu-item--free"><a href="https://www.morethanthemes.com/drupal-themes/free?utm_source=drupalizing-demos&utm_medium=demo-menu&utm_campaign=free-themes" target="_blank"><span class="d-none d-md-inline">View more </span>Free themes</a></li>
+        <li class="mt_demosmenu__menu-item mt_demosmenu__menu-item--premium"><a href="https://www.morethanthemes.com/drupal-themes/premium?utm_source=drupalizing-demos&utm_medium=demo-menu&utm_campaign=free-themes" target="_blank"><span class="d-none d-md-inline">View more </span>Premium themes</a></li>
       {% endif %}
     </ul>
   </div>
-
 {% endif %}
